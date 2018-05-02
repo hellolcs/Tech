@@ -5,3 +5,9 @@
 #docker search [image_name]
 docker search centos
 ```
+
+* Docker Image download
+```
+#docker image pull [image_name]:[tag]
+docker iamge pull centos:6.7
+```
