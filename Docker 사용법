@@ -1,0 +1,7 @@
+# Docker 사용법
+
+* Docker Image 찾기
+```
+#docker search [image_name]
+docker search centos
+```
