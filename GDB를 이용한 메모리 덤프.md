@@ -15,3 +15,7 @@ p *this (변수명)
 #dump memory /path/file_name start_address end_addres
 dump memory /home/memory_dump 0x71239bf213 0x71239bf444
 ```
+* 확인 하기
+```
+strings /home/memory_dump 
+```
