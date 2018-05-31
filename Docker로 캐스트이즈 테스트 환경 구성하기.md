@@ -1,16 +1,16 @@
 # Docker for Castis
 
-* LSM/VOD Docker Image down
+## LSM/VOD Docker Image down
 ```
 ```
 
-* Network 생성
+## Network 생성
 ```
 docker network create --subnet=xxx.xxx.xxx.0/24 {NetworkName}  // IP 및 NetworkName 수정
 ```
 
-* VOD Docker Run 
-** Start scripts 작성
+## VOD Docker Run 
+* Start scripts 작성
 ```
 #!/bin/bash
 
@@ -30,23 +30,23 @@ do
 done
 ```
 
-** 종료 스크립트 작성
+* 종료 스크립트 작성
 ```
 #!/bin/bash
 
 docker stop $(docker ps -a -q -f network={NetworkName})  // NetworkName 수정
 ```
 
-** VOD Container 실행
+* VOD Container 실행
 ```
 ./{start_scripts} count // count-1 개만큼 실행됨.
 ```
 
-** VOD Container 종료
+* VOD Container 종료
 ```
 ./{stop_scripts}
 ```
 
-* LSM Docker Run
+## LSM Docker Run
 ```
 ```
