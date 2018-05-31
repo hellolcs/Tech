@@ -26,7 +26,7 @@ do
 	then
 		continue
 	fi
-	docker run --name lim-test${temp} -v /data/contents:/data1 --net lim-net --ip xxx.xxx.xxx.${temp} --rm -d {ImageName}:{Version}  // /data/contents, IP, ImageName, Version 수정
+	docker run --name lim-vod${temp} -v /data/contents:/data1 --net lim-net --ip xxx.xxx.xxx.${temp} --rm -d {ImageName}:{Version}  // /data/contents, IP, ImageName, Version 수정
 done
 ```
 
@@ -34,7 +34,7 @@ done
 ```
 #!/bin/bash
 
-docker stop $(docker ps -a -q -f network={NetworkName})  // NetworkName 수정
+docker stop $(docker ps -a -q -f name=lim-vod)  // NetworkName 수정
 ```
 
 * VOD Container 실행
@@ -48,5 +48,14 @@ docker stop $(docker ps -a -q -f network={NetworkName})  // NetworkName 수정
 ```
 
 ## LSM Docker Run
+* start scripts 작성
 ```
+((LB Config가 /data/CiLLBServer.cfg 에 위채해야 함))
+## LB Config 수정 항목 추가 예정
+docker run --name lim-llb -v /data:/data --net lim-net --ip xxx.xxx.xxx.xxx --rm -d lim-llb:6.7
+```
+
+* stop
+```
+docker stop lim-llb
 ```

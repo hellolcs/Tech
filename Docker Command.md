@@ -37,3 +37,8 @@ docker rm -v $(docker ps -a -q -f status=exited)
 # -f : filter
 # -q : print only container ID
 ```
+
+* Connect running container
+```
+docker exec -it lim-test /bin/bash
+```
