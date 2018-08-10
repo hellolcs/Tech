@@ -1,5 +1,6 @@
 # Docker Command
 
+## Docker image
 * Docker Image 찾기
 ```
 docker search [image_name]
@@ -12,6 +13,7 @@ docker image pull [image_name]:[tag]
 docker iamge pull centos:6.7
 ```
 
+## Docker 실행 관련
 * Docker start (run)
 ```
 docker run -h centos-6-lim --name centos-6-lim --net lim-net --ip 192.168.15.3 -v /root/lim/share:/share --rm -it centos:6.7 /bin/bash  
@@ -22,7 +24,7 @@ docker run -h centos-6-lim --name centos-6-lim --net lim-net --ip 192.168.15.3 -
 # --rm : kill container after exit shell
 # -it : enable input terminal
 ```
-** Docker run 옵션
+* Docker run 옵션
 ```
 옵션  설명
 -d  detached mode 흔히 말하는 백그라운드 모드
@@ -36,12 +38,18 @@ docker run -h centos-6-lim --name centos-6-lim --net lim-net --ip 192.168.15.3 -
 --net   network 선택 / 도커 네트워크가 생성 되어
 ```
 
-** Docker start#2 (User Application run)
+* Docker start#2 (User Application run)
 ```
 docker run --name lim-test --net lim-net --ip 192.168.15.3 --rm -d lim-vod2:6.7
 # -d : detach mode
 ```
 
+* Connect running container
+```
+docker exec -it lim-test /bin/bash
+```
+
+## Docker 종료 관련
 * Remove multiple terminated processes
 ```
 docker rm -v $(docker ps -a -q -f status=exited)
@@ -51,11 +59,7 @@ docker rm -v $(docker ps -a -q -f status=exited)
 # -q : print only container ID
 ```
 
-* Connect running container
-```
-docker exec -it lim-test /bin/bash
-```
-
+## Docker network
 * Docker show ip list
 ```
 docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -aq)
