@@ -6,16 +6,17 @@ RUN sed -i -e 's/#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever/baseu
            /etc/yum.repos.d/*
 
 RUN yum install -y epel-release && yum -y clean all
-
+# useful package 
+RUN yum install -y vim-enhanced && yum -y clean all
 # install library for castis
-RUN rpm --rebuilddb && yum install -y boost-filesystem \
-           boost-thread \
-           tbb \
-           tar \
-           zip \
-           unzip \
-           bzip2 \
-        && yum -y clean all
+RUN rpm --rebuilddb && yum install -y boost \
+       boost-devel \
+       tbb \
+       tar \
+       zip \
+       unzip \
+       bzip2 \
+    && yum -y clean all
 
 # for ssh connection
 RUN yum -y install openssh-clients openssh-server && yum -y clean all && \

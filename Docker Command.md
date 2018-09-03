@@ -64,3 +64,14 @@ docker rm -v $(docker ps -a -q -f status=exited)
 ```
 docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -aq)
 ```
+
+## Docker Terminal 크기 변경
+* Check Terminal Size (default : 80*24)
+```
+docker exec -it "container_name" tput lines
+docker exec -it "container_name" tput cols
+```
+* change docker terminal size
+```
+docker exec -e COLUMNS=200 -e LINES=200 -it "container_name" /bin/bash
+```
