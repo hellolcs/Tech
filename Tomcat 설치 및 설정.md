@@ -1,6 +1,6 @@
-#Httpd, Tomcat 설치 및 연동 설정
+# Httpd, Tomcat 설치 및 연동 설정
 
-##JAVA 설치
+## JAVA 설치
 * JAVA 설치 (추후 버전 관리가 용의하도록 tar 혹은 rpm으로 설치)
 ```
 (tar 설치시만 진행)
@@ -24,7 +24,7 @@ export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 #echo $JAVA_HOME (확인)
 ```
 
-##Tomcat 설치
+## Tomcat 설치
 * Download(http://archive.apache.org/dist/tomcat/ 에서 버전 확인)
 ```
 #wget http://archive.apache.org/dist/tomcat/tomcat-9/v9.0.12/bin/apache-tomcat-9.0.12.tar.gz
@@ -34,7 +34,7 @@ export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 #ln -sf apache-tomcat-9.0.12 tomcat
 ```
 
-##httpd 설치
+## httpd 설치
 * 추후 버그나 취약점 시 버전 변경이 용의하도록 yum 설치 진행
 ```
 #yum install -y httpd
