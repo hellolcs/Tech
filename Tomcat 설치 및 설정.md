@@ -25,7 +25,7 @@ export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 ```
 
 ##Tomcat 설치
-*Download(http://archive.apache.org/dist/tomcat/ 에서 버전 확인)
+* Download(http://archive.apache.org/dist/tomcat/ 에서 버전 확인)
 ```
 #wget http://archive.apache.org/dist/tomcat/tomcat-9/v9.0.12/bin/apache-tomcat-9.0.12.tar.gz
 #mkdir /app 
@@ -35,16 +35,16 @@ export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 ```
 
 ##httpd 설치
-*추후 버그나 취약점 시 버전 변경이 용의하도록 yum 설치 진행
+* 추후 버그나 취약점 시 버전 변경이 용의하도록 yum 설치 진행
 ```
 #yum install -y httpd
 ```
 
-*firewall 서비스 추가 (firewall을 사용한다면 해제 필요)
+* firewall 서비스 추가 (firewall을 사용한다면 해제 필요)
 ```
 #firewall-cmd --permanent --add-service=http
 #firewall-cmd --permanent --add-service=httpd
 #firewall-cmd --reload
 ```
 
-*systemd에 추가
+* systemd에 추가
